@@ -29,3 +29,61 @@
 	  
 -- BONUS
 -- Of the films from the previous query, which ones talk about a 'Moose' in the description?
+
+
+
+
+
+--Q1
+SELECT * 
+FROM film
+LIMIT 10;
+
+--Q2
+SELECT *
+FROM film
+WHERE language_id = 1
+LIMIT 5;
+
+--Q3
+SELECT * 
+FROM film
+WHERE language_id = 1 
+AND rating = 'G'
+LIMIT 5;
+
+--Q4
+SELECT * 
+FROM film
+WHERE language_id = 1 
+AND rating  IN('G', 'PG', 'PG-13')
+AND rental_rate < 3
+AND replacement_cost < 10
+LIMIT 5;
+
+--Q5
+SELECT * 
+FROM film
+WHERE language_id = 1 
+AND rating  IN('G', 'PG', 'PG-13')
+AND rental_rate < 3
+AND replacement_cost < 10
+AND length < 90
+AND release_year <= 2006
+LIMIT 5;
+
+
+
+--Q6
+SELECT title
+FROM film
+WHERE language_id = 1 
+AND rating  IN('G', 'PG', 'PG-13')
+AND rental_rate < 3
+AND replacement_cost < 10
+AND length < 90
+AND release_year <= 2006
+AND description LIKE '%Moose%';
+
+
+-- Newton Labyrinth
